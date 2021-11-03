@@ -1,0 +1,17 @@
+<h1> <%= @user.capitalize %> </h1>
+<p><strong>Email:</strong> <a href="mailto:<%= @user_info[:email] %>"><%= @user_info[:email] %></a> </p>
+<p><strong>Interests:</strong> <%= @user_info[:interests].map(&:capitalize).join(', ') %></p>
+
+<div>
+  <% @users.map(&:to_s).each do |user| %>
+    <% unless @user == user %>
+      <a href="/<%= user %>"><%= user.capitalize %></a>
+    <% end %>
+  <% end %>
+</div>
+
+<div>
+<a href="/">Home</a>
+</div>
+
+
